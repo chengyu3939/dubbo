@@ -19,18 +19,40 @@
 package org.apache.dubbo.demo.consumer;
 
 import org.apache.dubbo.config.ApplicationConfig;
+import org.apache.dubbo.config.ProtocolConfig;
 import org.apache.dubbo.config.ReferenceConfig;
 import org.apache.dubbo.config.RegistryConfig;
 import org.apache.dubbo.demo.DemoService;
 
+import java.io.IOException;
+
 public class Application {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
+
+
         ReferenceConfig<DemoService> reference = new ReferenceConfig<>();
         reference.setApplication(new ApplicationConfig("dubbo-demo-api-consumer"));
-        reference.setRegistry(new RegistryConfig("zookeeper://127.0.0.1:2181"));
+        reference.setRegistry(new RegistryConfig("zookeeper://192.168.50.72:2181"));
         reference.setInterface(DemoService.class);
+        reference.setProtocol("dubbo");
+//        reference.setVersion("1.0.0");
         DemoService service = reference.get();
-        String message = service.sayHello("dubbo");
-        System.out.println(message);
+        System.out.println(service.sayHello("dubbo1"));
+        System.out.println(service.sayHello("dubbo2"));
+        System.out.println(service.sayHello("dubbo3"));
+        System.out.println(service.sayHello("dubbo4"));
+        System.out.println(service.sayHello("dubbo5"));
+        System.out.println(service.sayHello("dubbo6"));
+        System.out.println(service.sayHello("dubbo7"));
+        System.out.println(service.sayHello("dubbo8"));
+        System.out.println(service.sayHello("dubbo9"));
+        System.out.println(service.sayHello("dubbo10"));
+        System.out.println(service.sayHello("dubbo11"));
+        System.out.println(service.sayHello("dubbo12"));
+        System.out.println(service.sayHello("dubbo13"));
+
+
+//        System.in.read();
     }
 }

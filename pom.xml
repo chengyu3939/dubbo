@@ -149,6 +149,10 @@
         <module>dubbo-metadata-report</module>
         <module>dubbo-configcenter</module>
         <module>dubbo-dependencies</module>
+        <module>dubbo-test-demo</module>
+        <module>dubbo-test-consumer</module>
+        <module>dubbo-provider-demo</module>
+        <module>dubbo-main-load</module>
     </modules>
 
     <dependencyManagement>
